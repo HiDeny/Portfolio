@@ -1,9 +1,95 @@
-body {
-  width: 90vw;
+main {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1rem;
+
   margin: 1rem;
+  background-color: aliceblue;
 }
 
 img {
   object-fit: contain;
-  max-width: 80%;
+  max-width: 100%;
+  min-width: 50px;
+  background-color: lightgrey;
+}
+
+section {
+  display: grid;
+
+  margin: 0 2rem;
+  padding: 1.5rem;
+
+  background-color: beige;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+menu {
+  display: flex;
+  justify-content: right;
+  gap: 0.25rem;
+
+  padding: 0;
+  list-style: none;
+}
+
+/** ABOUT ME  */
+
+#about-me {
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-columns: 2fr 3fr;
+}
+
+#about-me > figure {
+  grid-row: 1/-1;
+  grid-column: 1;
+  margin: 0;
+}
+
+#about-me > menu {
+  grid-column: 2;
+}
+
+/** MY WORK */
+
+#work {
+  grid-auto-rows: 4rem auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project-card {
+  display: grid;
+  grid-template-rows: 3fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
+
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid blue;
+  border-radius: 0.25rem;
+}
+
+.project-card > img {
+  grid-column: 1/-1;
+}
+
+.project-description {
+  grid-column: 1/-1;
+}
+
+#work > .title {
+  grid-column: 1/-1;
+}
+
+/** CONTACT */
+
+#contact {
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-columns: 2fr 3fr;
+}
+
+#contact > img {
+  grid-row: 1/-1;
+  grid-column: 2;
+  margin: 0;
 }
