@@ -18,13 +18,17 @@
       <section id="about-me">
         <figure>
           <img
-            src="./assets/man-in-coffee.jpg"
+            srcset="
+              ./assets/imgs/man-face-427.jpg   427w,
+              ./assets/imgs/man-face-1280.jpg 1280w
+            "
+            src="./assets/imgs/men-face-1280.jpg"
             alt="Man working in coffee shop"
           />
-          <figcaption>My Picture</figcaption>
+          <figcaption>Mark Question</figcaption>
         </figure>
+        <h2 class="title">About Me</h2>
         <div class="sub-card">
-          <h2 class="title">About Me</h2>
           <p class="description">
             Incididunt veniam sint duis esse magna minim irure sit cupidatat non
             excepteur laboris elit. Nulla officia quis qui veniam velit proident
@@ -144,9 +148,8 @@
     </main>
     <footer>
       <section id="contact">
-        <img src="./assets/man-on-chair.jpg" alt="Man working at the desk" />
+        <h2 class="title">Contact Me</h2>
         <div class="sub-card">
-          <h2 class="title">Contact Me</h2>
           <p>
             Anim id aliqua incididunt anim nostrud voluptate culpa in est sit do
             dolore. Excepteur laborum non reprehenderit occaecat mollit officia.
@@ -165,6 +168,14 @@
             <li><button>Twitter</button></li>
           </menu>
         </div>
+        <img
+          srcset="
+            ./assets/imgs/man-back-640.jpg   640w,
+            ./assets/imgs/man-back-1920.jpg 1920w
+          "
+          src="./assets/man-on-chair.jpg"
+          alt="Man working at the desk"
+        />
       </section>
     </footer>
   </body>
