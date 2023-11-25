@@ -33,6 +33,10 @@ img {
   max-width: 100%;
 }
 
+figcaption {
+  text-align: center;
+}
+
 menu {
   display: flex;
   align-items: center;
@@ -60,6 +64,7 @@ li {
 
 #about-me {
   grid-template-columns: 2fr 3fr;
+  margin-top: 0;
 }
 
 #about-me > figure {
@@ -83,7 +88,6 @@ li {
 
   width: 100%;
 
-  text-align: center;
   font-size: 3rem;
   color: white;
 }
@@ -109,6 +113,7 @@ li {
   display: grid;
   grid-template-rows: 3fr 1fr 2fr;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
 
   padding: 1rem;
   border: var(--border);
@@ -116,7 +121,7 @@ li {
   box-shadow: var(--shadow);
 }
 
-.project-card > img {
+.project-card > figure {
   grid-column: 1/-1;
 }
 
@@ -132,6 +137,7 @@ li {
 
 #contact {
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 0;
 }
 
 #contact > img {
@@ -144,4 +150,57 @@ li {
 
 footer {
   background-color: #a6c5e1;
+}
+
+@media (max-width: 499px) {
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+
+    font-size: 1.3rem;
+  }
+
+  section {
+    margin: 3rem 0;
+    padding: 0;
+
+    border-radius: 1rem;
+  }
+
+  menu {
+    justify-content: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  #about-me {
+    grid-template-columns: 1fr;
+  }
+
+  .sub-card {
+    display: grid;
+
+    border: none;
+    padding: 1.5rem;
+    box-shadow: none;
+  }
+  
+  .project-card {
+    margin: 0 1.5rem;
+  }
+
+  #contact {
+    grid-template-columns: 1fr;
+  }
+
+  #contact > img {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #contact > .sub-card {
+    grid-row: 1;
+    margin: 0;
+  }
 }
