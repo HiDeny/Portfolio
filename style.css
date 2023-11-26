@@ -15,15 +15,15 @@
 
 :root {
   font-family: Helvetica, sans-serif;
-  --shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   --border: 1px solid #80808033;
+  --font-color-light: #ebeef2;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background-color: #a6a197;
+  background-color: #59574c;
 }
 
 header {
@@ -64,7 +64,9 @@ section {
   max-width: 70rem;
   margin: auto;
 
-  padding-bottom: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 img {
@@ -81,7 +83,7 @@ menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
 
   padding: 0;
   margin: 0;
@@ -93,20 +95,26 @@ menu {
   align-self: center;
 
   margin: 0;
-
   padding: 1rem;
+
   font-size: 2rem;
+  letter-spacing: 1px;
   font-family: 'NaturalFace';
-  color: #ebeef2;
+  color: var(--font-color-light);
 }
 
 .sub-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   min-height: 20rem;
   padding: 1.5rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin: 2rem 1rem;
 }
 
 /** LINKS */
@@ -149,9 +157,15 @@ menu > li > a {
 /** ABOUT ME  */
 
 #about-me {
+  position: relative;
+  z-index: 1;
+
   grid-template-columns: 1fr;
   margin-top: 0;
   padding-top: 0;
+  padding-bottom: 6rem;
+
+  background-color: #a6a197;
 }
 
 #about-me > figure {
@@ -163,6 +177,11 @@ menu > li > a {
 
   margin: 0;
   box-shadow: var(--shadow);
+}
+
+#about-me > .title {
+  padding-bottom: 0;
+  padding-top: 2rem;
 }
 
 #about-me > menu {
@@ -182,30 +201,77 @@ menu > li > a {
 /** MY WORK */
 
 #work {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  bottom: 1rem;
 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+
+  padding-bottom: 4rem;
   border-radius: 1rem 1rem 0rem 0rem;
   background-color: #59574c;
 }
 
+#work > .title {
+  position: sticky;
+  top: 2.5rem;
+  bottom: 30rem;
+}
+
 .project-card {
+  position: sticky;
+  top: 7rem;
+
   display: grid;
-  grid-template-rows: 3fr 1fr 2fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3rem 1fr 1fr 3rem;
+
   align-items: center;
 
+  min-height: 30rem;
   padding: 1rem;
-  margin: 0 1rem;
+  margin: 0 1.5rem;
 
   background-color: #a6a197;
   border: var(--border);
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   box-shadow: var(--shadow);
+}
+
+.project-card:nth-of-type(n + 2) {
+  top: 9rem;
+}
+
+.project-card:nth-of-type(n + 3) {
+  top: 11rem;
+}
+
+.project-card:nth-of-type(n + 4) {
+  top: 13rem;
+}
+
+.project-card:nth-of-type(n + 5) {
+  top: 15rem;
+}
+
+.project-card:nth-of-type(n + 6) {
+  top: 17rem;
+}
+
+.project-card.end {
+  grid-column: 1/-1;
 }
 
 .project-card > figure {
   grid-column: 1/-1;
+}
+.project-title {
+  align-self: baseline;
+  margin: 0;
+
+  font-size: 1.2rem;
+  font-family: 'NaturalFace';
 }
 
 .project-description {
@@ -222,10 +288,21 @@ footer {
 }
 
 #contact {
+  position: relative;
+  z-index: 3;
+  bottom: 2rem;
+
   padding-bottom: 0;
 
   background-color: #3f4033;
   border-radius: 1rem 1rem 0rem 0rem;
+
+  color: var(--font-color-light);
+}
+
+#contact > img {
+  position: relative;
+  top: 2rem;
 }
 
 @media (max-width: 499px) {
