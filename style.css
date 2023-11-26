@@ -18,6 +18,7 @@
   --shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   --border: 1px solid #80808033;
   --font-color-light: #ebeef2;
+  --index: 1;
   scroll-behavior: smooth;
 }
 
@@ -26,20 +27,32 @@ body {
   background-color: #59574c;
 }
 
+main {
+  position: relative;
+  /* bottom: 1rem; */
+}
+
 header {
-  display: flex;
-  justify-content: center;
+  z-index: 1;
+  position: sticky;
+  top: 0;
 }
 
 nav {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
   width: 100%;
   max-width: 30rem;
-  position: fixed;
+
   padding: 0.5rem 0;
-  z-index: 10;
 
   display: flex;
   justify-content: center;
+
   border-radius: 0rem 0rem 0.5rem 0.5rem;
   background-color: #403f3f36;
   backdrop-filter: blur(0.5rem);
@@ -59,10 +72,13 @@ nav > a {
 
 section {
   display: grid;
+  grid-template-rows: 4rem auto;
   align-items: center;
 
   max-width: 70rem;
+
   margin: auto;
+  border-radius: 1rem 1rem 0rem 0rem;
 
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -101,15 +117,6 @@ menu {
   letter-spacing: 1px;
   font-family: 'NaturalFace';
   color: var(--font-color-light);
-}
-
-.sub-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  min-height: 20rem;
-  padding: 1.5rem;
 }
 
 .description {
@@ -154,24 +161,9 @@ menu > li > a {
   background-image: url('./assets/icons/openFile.png');
 }
 
-/** ABOUT ME  */
+/** BANNER */
 
-#about-me {
-  position: relative;
-  z-index: 1;
-
-  grid-template-columns: 1fr;
-  margin-top: 0;
-  padding-top: 0;
-  padding-bottom: 6rem;
-
-  background-color: #a6a197;
-}
-
-#about-me > figure {
-  grid-row: 1/-1;
-  grid-column: 1;
-
+.banner > figure {
   position: relative;
   display: flex;
 
@@ -179,18 +171,9 @@ menu > li > a {
   box-shadow: var(--shadow);
 }
 
-#about-me > .title {
-  padding-bottom: 0;
-  padding-top: 2rem;
-}
-
-#about-me > menu {
-  grid-column: 2;
-}
-
-#about-me > figure > figcaption {
+.banner > figure > figcaption {
   position: absolute;
-  bottom: 1rem;
+  bottom: 2rem;
 
   width: 100%;
 
@@ -198,38 +181,62 @@ menu > li > a {
   color: white;
 }
 
+/** ABOUT ME  */
+
+#about-me {
+  z-index: 2;
+  position: sticky;
+  top: 2.5rem;
+
+  height: calc(100vh - 3rem);
+  grid-template-columns: 1fr;
+
+  background-color: #a6a197;
+}
+
+#about-me > .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  height: 100%;
+}
+
+#about-me > menu {
+  grid-column: 2;
+}
+
 /** MY WORK */
 
 #work {
-  position: relative;
-  z-index: 2;
-  bottom: 1rem;
+  z-index: 3;
+  position: sticky;
+  top: 4rem;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
+  height: calc(100vh - 4.5rem);
 
-  padding-bottom: 4rem;
   border-radius: 1rem 1rem 0rem 0rem;
   background-color: #59574c;
 }
 
-#work > .title {
-  position: sticky;
-  top: 2.5rem;
-  bottom: 30rem;
+#work > .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  height: 100%;
+  overflow: scroll;
 }
 
 .project-card {
-  position: sticky;
-  top: 7rem;
+  /* position: sticky;
+  top: calc(var(--index) * 1rem); */
 
   display: grid;
   grid-template-rows: 3rem 1fr 1fr 3rem;
 
   align-items: center;
 
-  min-height: 30rem;
+  /* min-height: 30rem; */
   padding: 1rem;
   margin: 0 1.5rem;
 
@@ -240,23 +247,23 @@ menu > li > a {
 }
 
 .project-card:nth-of-type(n + 2) {
-  top: 9rem;
+  --index: 2;
 }
 
 .project-card:nth-of-type(n + 3) {
-  top: 11rem;
+  --index: 3;
 }
 
 .project-card:nth-of-type(n + 4) {
-  top: 13rem;
+  --index: 4;
 }
 
 .project-card:nth-of-type(n + 5) {
-  top: 15rem;
+  --index: 5;
 }
 
 .project-card:nth-of-type(n + 6) {
-  top: 17rem;
+  --index: 6;
 }
 
 .project-card.end {
@@ -278,31 +285,18 @@ menu > li > a {
   grid-column: 1/-1;
 }
 
-#work > .title {
-  grid-column: 1/-1;
-}
-
 /** CONTACT */
-footer {
-  background-color: #59574c;
-}
 
 #contact {
-  position: relative;
-  z-index: 3;
-  bottom: 2rem;
+  z-index: 4;
+  position: sticky;
+  top: 5rem;
 
-  padding-bottom: 0;
+  height: calc(100vh - 5.5rem);
 
   background-color: #3f4033;
-  border-radius: 1rem 1rem 0rem 0rem;
 
   color: var(--font-color-light);
-}
-
-#contact > img {
-  position: relative;
-  top: 2rem;
 }
 
 @media (max-width: 499px) {
