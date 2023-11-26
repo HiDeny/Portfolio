@@ -50,7 +50,7 @@ nav {
   font-family: 'NaturalFace';
 }
 
-a {
+nav > a {
   text-decoration: none;
   color: #ebeef3;
 
@@ -81,15 +81,12 @@ menu {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 
   padding: 0;
   margin: 0;
 
   list-style: none;
-}
-
-li {
-  padding: 0.25rem;
 }
 
 .title {
@@ -110,6 +107,43 @@ li {
 
   min-height: 20rem;
   padding: 1.5rem;
+}
+
+/** LINKS */
+
+menu > li > a {
+  display: block;
+  width: 45px;
+  height: 45px;
+
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dark.gitHub {
+  background-image: url('./assets/icons/GitHub.svg');
+}
+.light.gitHub {
+  background-image: url('./assets/icons/GitHub-light.svg');
+}
+
+.dark.linkedIn {
+  background-image: url('./assets/icons/LinkedIn.svg');
+}
+.light.linkedIn {
+  background-image: url('./assets/icons/LinkedIn-light.svg');
+}
+
+.dark.x {
+  background-image: url('./assets/icons/X.svg');
+}
+.light.x {
+  background-image: url('./assets/icons/X-light.svg');
+}
+
+.openFile {
+  background-image: url('./assets/icons/openFile.png');
 }
 
 /** ABOUT ME  */
