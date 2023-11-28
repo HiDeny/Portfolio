@@ -228,15 +228,15 @@ menu > li > a {
 }
 
 .project-card {
-  /* position: sticky;
-  top: calc(var(--index) * 1rem); */
+  position: sticky;
+  top: calc(var(--index) * 1rem);
 
   display: grid;
   grid-template-rows: 3rem 1fr 1fr 3rem;
 
   align-items: center;
 
-  /* min-height: 30rem; */
+  min-height: 25rem;
   padding: 1rem;
   margin: 0 1.5rem;
 
@@ -301,3 +301,11 @@ menu > li > a {
 
 @media (max-width: 499px) {
 }
+
+/* style.css | http://127.0.0.1:5500/style.css */
+
+/* #work > .content {
+  position: sticky;
+  top: 1rem;
+  transform-origin: center top;
+} */
