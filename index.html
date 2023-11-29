@@ -25,7 +25,7 @@
           alt="Man working in coffee shop"
         />
 
-        <h1>Mark Question</h1>
+        <h1 class="name">Mark Question</h1>
       </div>
     </header>
 
@@ -35,11 +35,12 @@
         <div class="content">
           <div class="description">
             <p>
-              Meet Mark Question, a website developer writing lines of code with
-              passion for turning ideas into reality.
+              Meet <strong>Mark Question</strong>, a website developer writing
+              lines of code with passion for turning ideas into reality.
             </p>
             <p>
-              My journey spans the evolution from HTML to dynamic JavaScript
+              My journey spans the evolution from <i>HTML</i> to dynamic
+              <i>JavaScript</i>
               frameworks.
             </p>
             <p>
@@ -47,7 +48,7 @@
               websites that not only meet current standards but are also
               future-proofed for the dynamic digital horizon.
             </p>
-            <p>Each project is a unique story.</p>
+            <p class="quote">Each project is a unique story.</p>
           </div>
           <menu>
             <li>
@@ -259,7 +260,7 @@
           </article>
 
           <article class="project-card end">
-            <h3 class="project-title">PROJECTS</h3>
+            <h3 class="project-title">PROJECT REPOSITORIES</h3>
 
             <a
               href="https://github.com"
@@ -294,57 +295,73 @@
           <address class="contact-details">
             <label for="phone" class="phone">
               Phone:
-              <a href="tel:123 123 123" id="phone" aria-label="phone number">
-                123 456 789
+              <a
+                href="tel:+420 123 123 123"
+                id="phone"
+                aria-label="phone number"
+              >
+                +420 123 123 123
               </a>
             </label>
 
             <label for="mail" class="mail">
               Email:
-              <a href="mailto:email@email.com" id="mail" aria-label="email">
-                YourEmail@example.com
+              <a href="mailto:Email@example.com" id="mail" aria-label="email">
+                Email@example.com
               </a>
             </label>
+          </address>
 
-            <label for="gitHub" class="gitHub">
-              Github:
+          <menu>
+            <li>
+              <a
+                href="tel:123 123 123"
+                aria-label="phone number"
+                class="phone"
+                aria-label="tel:123 123 123"
+              >
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:email@email.com"
+                class="mail"
+                aria-label="email"
+                aria-label="mailto:email@email.com"
+              >
+              </a>
+            </li>
+            <li>
               <a
                 href="https://github.com"
                 target="_blank"
                 alt="Git Hub"
-                id="gitHub"
+                class="gitHub light"
                 aria-label="Git Hub"
-              >
-                Mark Question
-              </a>
-            </label>
-
-            <label for="x" class="x">
-              Twitter:
+              ></a>
+            </li>
+            <li>
               <a
                 href="https://twitter.com"
                 target="_blank"
                 alt="X (Twitter)"
                 id="x"
                 aria-label="Twitter"
+                class="x light"
               >
-                Mark Question
               </a>
-            </label>
-
-            <label for="linkedIn" class="linkedIn">
-              LinkedIn:
+            </li>
+            <li>
               <a
                 href="https://www.linkedin.com"
                 target="_blank"
                 alt="LinkedIn"
-                id="linkedIn"
+                class="linkedIn light"
                 aria-label="LinkedIn"
               >
-                Mark Question
               </a>
-            </label>
-          </address>
+            </li>
+          </menu>
         </div>
       </section>
     </footer>
