@@ -90,7 +90,7 @@ img {
   max-width: 100%;
 }
 
-figcaption {
+h1 {
   font-family: 'NaturalFace-Bold';
   text-align: center;
 }
@@ -168,7 +168,7 @@ menu > li > a {
 
 /** BANNER */
 
-.banner > figure {
+.banner {
   position: relative;
   display: flex;
 
@@ -178,24 +178,27 @@ menu > li > a {
   box-shadow: var(--shadow);
 }
 
-.banner > figure > figcaption {
+.banner > h1 {
   position: absolute;
-  bottom: 2rem;
+  bottom: 2.5rem;
 
   width: 100%;
+  margin: 0;
 
-  font-size: 2.5rem;
-  color: white;
+  font-size: 2rem;
+  color: var(--font-color-light);
 }
 
 /** ABOUT ME  */
 
 #about-me {
   z-index: 2;
-
   grid-template-columns: 1fr;
-
   background-color: #a6a197;
+}
+
+#about-me > .title {
+  color: #38382f;
 }
 
 #about-me > .content {
@@ -232,13 +235,20 @@ menu > li > a {
 
   overflow: scroll;
   scroll-snap-type: y mandatory;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+#work > .content::-webkit-scrollbar {
+  display: none;
 }
 
 .project-card {
   scroll-snap-align: start;
 
   display: grid;
-  grid-template-rows: 3rem 1fr 1fr 3rem;
+  grid-template-rows: 2rem 2fr 1fr 3rem;
 
   align-items: center;
 
@@ -253,7 +263,21 @@ menu > li > a {
 
 .project-card > figure {
   grid-column: 1/-1;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 0.5rem;
 }
+
+.project-card > figure > figcaption {
+  font-size: 1rem;
+  font-family: 'NaturalFace-Bold';
+}
+
 .project-title {
   align-self: baseline;
   margin: 0;
