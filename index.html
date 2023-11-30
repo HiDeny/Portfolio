@@ -9,9 +9,9 @@
   <body>
     <header>
       <nav>
-        <a href="#about-me">About Me</a>
-        <a href="#work">My Work</a>
-        <a href="#contact">Contact</a>
+        <a href="#about-me" tabindex="0">About Me</a>
+        <a href="#work" tabindex="0">My Work</a>
+        <a href="#contact" tabindex="0">Contact</a>
       </nav>
 
       <div role="banner" class="banner">
@@ -26,7 +26,7 @@
           alt="Man working in coffee shop"
         />
 
-        <h1 class="name">Mark Question</h1>
+        <h1 class="name"><span class="fontLight">Mark</span> <span class="fontBold">Question</span></h1>
       </div>
     </header>
 
@@ -51,7 +51,7 @@
             </p>
           </div>
 
-          <h4 class="quote">Each project is a unique story.</h4>
+          <p class="quote">Each project is a unique story.</p>
 
           <menu>
             <li>
@@ -298,18 +298,12 @@
           <address class="contact-details">
             <label for="phone" class="phone">
               Phone:
-              <a
-                href="tel:+420 123 123 123"
-                id="phone"
-                aria-label="phone number"
-              >
-                +420 123 123 123
-              </a>
+              <a href="tel:+420 123 123 123" id="phone"> +420 123 123 123 </a>
             </label>
 
             <label for="mail" class="mail">
               Email:
-              <a href="mailto:Email@example.com" id="mail" aria-label="email">
+              <a href="mailto:Email@example.com" id="mail">
                 Email@example.com
               </a>
             </label>
